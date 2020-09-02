@@ -6,6 +6,7 @@ const { PORT = 3000 } = process.env;
 // HTTP endpoints
 require('./http')(app);
 
-server.listen(PORT, console.log(`\nListening on port ${PORT}.\n`));
+// WS server
+require('./socket')(io);
 
-module.exports = { app, server, io };
+server.listen(PORT, console.log(`\nListening on port ${PORT}.\n`));
