@@ -1,3 +1,4 @@
+const cors = require('cors');
 const packageJson = require('../package-lock.json');
 
 module.exports = app => {
