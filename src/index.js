@@ -7,7 +7,7 @@ const options = {
     cert: fs.readFileSync('../server-cert.pem')
 };
 
-const server = require('https').createServer(app);
+const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const { PORT = 3000 } = process.env;
 
@@ -17,4 +17,4 @@ require('./http')(app);
 // WS server
 require('./socket')(io);
 
-server.listen(PORT, console.log(`\nListening on port ${PORT}.\n`));
+server.listen(option, PORT, console.log(`\nListening on port ${PORT}.\n`));
