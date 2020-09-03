@@ -1,15 +1,19 @@
 const fs = require('fs');
-
 const app = require('express')();
 
-const options = {
-    key: fs.readFileSync('../server-key.pem'),
-    cert: fs.readFileSync('../server-cert.pem')
-};
+const { PORT = 3000, MODE = 'prod' } = process.env;
 
-const server = require('https').createServer(options, app);
+let server;
+if (MODE === 'prod') {
+    const options = {
+        key: fs.readFileSync('../server-key.pem'),
+        cert: fs.readFileSync('../server-cert.pem')
+    };
+    server = require('https').createServer(options, app);
+} else {
+    server = require('http').createServer(app);
+}
 const io = require('socket.io')(server);
-const { PORT = 3000 } = process.env;
 
 // HTTP endpoints
 require('./http')(app);

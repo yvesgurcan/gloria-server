@@ -22,5 +22,9 @@ module.exports = io => {
         socket.on('message', ({ input, roomId }) => {
             socket.nsp.to(roomId).emit('message', input);
         });
+
+        socket.on('answer', ({ answer, roomId, userId }) => {
+            socket.nsp.to(roomId).emit('answer', { answer, userId });
+        });
     });
 };
