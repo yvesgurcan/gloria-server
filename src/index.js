@@ -17,4 +17,4 @@ require('./http')(app);
 // WS server
 require('./socket')(io);
 
-server.listen(option, PORT, console.log(`\nListening on port ${PORT}.\n`));
+server.listen(PORT, console.log(`\nListening on port ${PORT}.\n`));
