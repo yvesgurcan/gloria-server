@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+    LatestAmazonLinuxImageId:
+        Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+        Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
+
+Resources:
+    EC2ServerWebSocket:
+        Type: AWS::EC2::Instance
+        Properties:
+            # List of properties: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
+            InstanceType: t2.micro
+            ImageId: !Ref LatestAmazonLinuxImageId
+            InstanceInitiatedShutdownBehavior: terminate
+            # KeyName: my-key
+            #SecurityGroupIds:
+            #    - sg-abc01234
+            #SubnetId: subnet-abc01234
