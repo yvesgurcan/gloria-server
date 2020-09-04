@@ -6,8 +6,8 @@ const { PORT = 3000, MODE = 'prod' } = process.env;
 let server;
 if (MODE === 'prod') {
     const options = {
-        key: fs.readFileSync('../server-key.pem'),
-        cert: fs.readFileSync('../server-cert.pem')
+        key: fs.readFileSync('./certificates/server.key'),
+        cert: fs.readFileSync('../certificates/server.cert')
     };
     server = require('https').createServer(options, app);
 } else {
