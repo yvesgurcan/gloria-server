@@ -18,6 +18,8 @@ A Node microservice will start listening for requests at `localhost:3000`.
 
 ## Deployment
 
+    npm version patch
+
 ### AWS CLI
 
 Follow these steps if you haven't installed the AWS CLI on your machine:
