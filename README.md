@@ -1,4 +1,4 @@
-# Gloria WebSocket Server
+# Gloria Server
 
 ## Main dependencies
 

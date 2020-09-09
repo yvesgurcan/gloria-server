@@ -1,12 +1,12 @@
 {
-    "name": "gloria-websocket-server",
+    "name": "gloria-server",
     "description": "Gloria WebSocket Server.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "author": "Yves Gurcan",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Twenty-Four-7-Web-Dev/gloria-websocket-server"
+        "url": "https://github.com/Twenty-Four-7-Web-Dev/gloria-server"
     },
     "main": "src/index.js",
     "scripts": {
