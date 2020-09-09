@@ -4,6 +4,7 @@ const packageJson = require('../package-lock.json');
 
 module.exports = app => {
     app.get('/index.html', function (req, res) {
+        console.log('Received ping.');
         res.sendFile(path.join(__dirname + '/index.html'));
     });
 
