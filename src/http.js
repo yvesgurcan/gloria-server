@@ -1,7 +1,12 @@
+const path = require('path');
 const cors = require('cors');
 const packageJson = require('../package-lock.json');
 
 module.exports = app => {
+    app.get('/index.html', function (req, res) {
+        res.sendFile(path.join(__dirname + '/index.html'));
+    });
+
     app.get(
         '/',
         cors({

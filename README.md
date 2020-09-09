@@ -40,16 +40,6 @@ If you want to delete a previously deployed stack:
 
 Deleted EC2 instances will disappear after 10-20 minutes.
 
-## SSL certificates
-
-Unfortunately, it is not possible to generate SSL certificates directly for the URLs of EC2 instances such as `ec2-54-191-191-113.us-west-2.compute.amazonaws.com` as they are owned by AWS.
-
-The best solution is to purchase a domain such as `gloria.digital` and, thanks to CloudFlare, have its DNS records point to the URL of the EC2 instance running the WebSocket server.
-
-### Generate certificates
-
-    openssl req -nodes -new -x509 -keyout server.key -out server.cert
-
 ### Upload certificate to AWS IAM
 
     aws iam upload-server-certificate --server-certificate-name websocket-test --certificate-body file://server.cert --private-key file://server.key
